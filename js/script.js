@@ -24,7 +24,7 @@ const generateBombs = (maxBombNumber, totalBombs) => {
     return bombs;
 };
 
-// FINE DEI GIOCHI 
+// FINE DEI GIOCHI //! (4/5 MILESTONE)
 
 const endGame = (score, bombs, revealFunction, hasWon = false) =>{
     const message = hasWon ? `Hai vinto!`: `Hai perso! hai totalizzato ${score} punti`;
@@ -111,7 +111,7 @@ formElement.addEventListener('submit', (e) => {
             }else{
                 scoreDisplay.innerText = ++score;  // ! (1 MILESTONE)
 
-                // VINCITA DEL GAME 
+                // VINCITA DEL GAME  //! (4 MILESTONE)
 
                 if(score === maxPoint){
                    endGame(score, bombs, revealAllCell, true);
