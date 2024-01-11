@@ -71,9 +71,9 @@ formElement.addEventListener('submit', (e) => {
 
     const root = document.querySelector(':root');
     root.style.setProperty('--cols-per-row', cols);
-
     const totCell = rows * cols;
-    // CREO LO SCORE 
+
+    // CREO LO SCORE // !(1 MILESTONE)
     let score = 0;
     scoreDisplay.innerText = score;
 
@@ -88,19 +88,26 @@ formElement.addEventListener('submit', (e) => {
         const cell = createCell(i);
         // CLICK SULLA CELLA
         cell.addEventListener('click', () => {
+
             // AGGIUNGO CLASSE ALLA CELLA E CONTROLLO DI NON RIPETERE
+
             if(cell.classList.contains('clicked')) return;
             const cellValue = cell.innerText;
             console.log('Valore della casella cliccata:', cellValue);
             cell.classList.add('clicked');
+
             // CONTROLLO VINCITA O PERDITA GAME 
+
             const hasHitBomb = bombs.includes(i);
+
             // COLPISCO UNA BOMBA
+
             if(hasHitBomb){
                 endGame(score, bombs, revealAllCell, false)
 
             }else{
-                scoreDisplay.innerText = ++score;
+                scoreDisplay.innerText = ++score;  // ! (1 MILESTONE)
+
                 // VINCITA DEL GAME
                 if(score === maxPoint){
                    endGame(score, bombs, revealAllCell, true);
@@ -110,6 +117,7 @@ formElement.addEventListener('submit', (e) => {
             
         });
         // APPENDO LE CELLE AL PADRE GRID
+
         grid.appendChild(cell);
     };
 });
