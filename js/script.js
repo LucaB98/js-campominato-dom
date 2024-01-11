@@ -14,7 +14,7 @@ const createCell = (content) => {
     return newCell;
 };
 
-// GENERAZIONE BOMBE
+// GENERAZIONE BOMBE //! (2 MILESTONE)
 const generateBombs = (maxBombNumber, totalBombs) => {
     const bombs = [];
     while(bombs.length < totalBombs){
@@ -24,7 +24,8 @@ const generateBombs = (maxBombNumber, totalBombs) => {
     return bombs;
 };
 
-// FINE DEI GIOCHI
+// FINE DEI GIOCHI 
+
 const endGame = (score, bombs, revealFunction, hasWon = false) =>{
     const message = hasWon ? `Hai vinto!`: `Hai perso! hai totalizzato ${score} punti`;
     alert(message);
@@ -32,7 +33,8 @@ const endGame = (score, bombs, revealFunction, hasWon = false) =>{
     revealFunction(bombs);
 };
 
-// RILEVAMENTO CELLE
+// RILEVAMENTO CELLE 
+
 const revealAllCell = (bombs) => {
     const cells = document.querySelectorAll('.cell')
     for(let cell of cells){
@@ -77,7 +79,7 @@ formElement.addEventListener('submit', (e) => {
     let score = 0;
     scoreDisplay.innerText = score;
 
-    // CREO LE BOMBE
+    // CREO LE BOMBE // ! (2 MILESTONE)
     const totalBombs = 16;
     const maxPoint = totCell - totalBombs;
     const bombs = generateBombs(totCell, totalBombs)
@@ -98,17 +100,19 @@ formElement.addEventListener('submit', (e) => {
 
             // CONTROLLO VINCITA O PERDITA GAME 
 
-            const hasHitBomb = bombs.includes(i);
+            const hasHitBomb = bombs.includes(i); 
 
             // COLPISCO UNA BOMBA
 
-            if(hasHitBomb){
-                endGame(score, bombs, revealAllCell, false)
+            if(hasHitBomb){   
+
+                endGame(score, bombs, revealAllCell, false) 
 
             }else{
                 scoreDisplay.innerText = ++score;  // ! (1 MILESTONE)
 
-                // VINCITA DEL GAME
+                // VINCITA DEL GAME  
+
                 if(score === maxPoint){
                    endGame(score, bombs, revealAllCell, true);
 
