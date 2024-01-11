@@ -33,7 +33,8 @@ const endGame = (score, bombs, revealFunction, hasWon = false) =>{
     revealFunction(bombs);
 };
 
-// RILEVAMENTO CELLE  //! (3 MILESTONE)
+// RILEVAMENTO CELLE  //! (3 MILESTONE) 
+//*SUPER BONUS
 
 const revealAllCell = (bombs) => {
     const cells = document.querySelectorAll('.cell')
@@ -62,7 +63,7 @@ formElement.addEventListener('submit', (e) => {
 
 
     //*BONUS
-    
+
     switch(level){
         case 'difficile':
             rows = 7;
