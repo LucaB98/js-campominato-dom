@@ -33,7 +33,7 @@ const endGame = (score, bombs, revealFunction, hasWon = false) =>{
     revealFunction(bombs);
 };
 
-// RILEVAMENTO CELLE 
+// RILEVAMENTO CELLE  //! (3 MILESTONE)
 
 const revealAllCell = (bombs) => {
     const cells = document.querySelectorAll('.cell')
@@ -100,18 +100,18 @@ formElement.addEventListener('submit', (e) => {
 
             // CONTROLLO VINCITA O PERDITA GAME 
 
-            const hasHitBomb = bombs.includes(i); 
+            const hasHitBomb = bombs.includes(i); //! (3 MILESTONE)
 
             // COLPISCO UNA BOMBA
 
-            if(hasHitBomb){   
+            if(hasHitBomb){   //! (3 MILESTONE)
 
                 endGame(score, bombs, revealAllCell, false) 
 
             }else{
                 scoreDisplay.innerText = ++score;  // ! (1 MILESTONE)
 
-                // VINCITA DEL GAME  
+                // VINCITA DEL GAME 
 
                 if(score === maxPoint){
                    endGame(score, bombs, revealAllCell, true);
