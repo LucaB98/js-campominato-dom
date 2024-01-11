@@ -60,6 +60,9 @@ formElement.addEventListener('submit', (e) => {
     let rows = 10;
     let cols = 10;
 
+
+    //*BONUS
+    
     switch(level){
         case 'difficile':
             rows = 7;
