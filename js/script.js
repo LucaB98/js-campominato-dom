@@ -1,10 +1,10 @@
-// PRENDO GLI ELEMENTI CHE MI SERVONO
+// ! PRENDO GLI ELEMENTI CHE MI SERVONO
 const formElement = document.querySelector('form');
 const grid = document.getElementById('grid');
 const select = document.getElementById('select');
 const scoreDisplay = document.getElementById('score');
 
-// FUNZIONI
+// ! FUNZIONI
 // CREAZIONE CELLA
 const createCell = (content) => {
     const newCell = document.createElement('div');
@@ -44,7 +44,7 @@ const revealAllCell = (bombs) => {
 };
 
 
-// SVOLGIMENTO DELL'ESERCIZIO
+//! SVOLGIMENTO DELL'ESERCIZIO
 
 formElement.addEventListener('submit', (e) => {
     e.preventDefault();
