@@ -1,16 +1,61 @@
-/*RESET*/
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body{
+    background-color: chartreuse;
 }
 
-/*UTILS*/
-body{
-    font-family: 'Rubik Mono One', sans-serif;
+
+:root{
+    --cols-per-row: 10;
+}
+
+.logo{
+    height: 30px;
+    height: 100%;
+}
+.navbar{
+    height: 70px;
+}
+.btn{
+    width: 100px;
+    background-color: lightgray;
+    color: black;
+    padding: 0;
+    border: 1px solid;
+}
+
+#main{   
+    margin: 0 auto;
 }
 
 .container{
-    max-width: 1200px;
+    width: 100%;
+    max-width: 1080px;
     margin: 0 auto;
+    flex-grow: 1;
+}
+
+#grid{
+    height: 500px;
+    width: 500px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#grid .cell{
+    height: calc(100% / var(--cols-per-row));
+    width: calc(100% / var(--cols-per-row));
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#grid .cell.clicked{
+    background-color: lightskyblue;
+}
+
+#grid .cell.bomb{
+    background-color: red;
 }
